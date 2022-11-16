@@ -6,7 +6,9 @@ list_for_product = [67, 3.4, 23, 5]
 list_for_quotient = [678, 12]
 list_for_random = [9, 89]
 string = "Current System: Windows."
-
+number = -8
+file_path= "D:\Training\Module_practice\Documents\Write"
+write_row = ['Dog', 'Cat', 'Elephant', 'Fish']
 
 class Module(TestBase):
     def call_functions(self):
@@ -17,6 +19,9 @@ class Module(TestBase):
         self.generate_random_number(list_for_random)
         self.remove_punctuation(string)
         self.generate_random_string(10)
+        self.check_number(number)
+        self.write_into_csv_file(write_row, file_path)
+        self.read_csv_file(file_path)
 
 
 obj = Module()

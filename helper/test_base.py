@@ -1,5 +1,6 @@
 import random
 import string
+import csv
 
 
 class TestBase:
@@ -58,3 +59,22 @@ class TestBase:
         ran = ''.join(random.choices(string.ascii_uppercase + string.digits, k=string_length))
         print("The randomly generated string is : " + str(ran))
 
+    def check_number(self, num):
+        if num > 0:
+            print("Number is Positive")
+        elif num < 0:
+            print("Number is Negative")
+        else:
+            print("Number is zero")
+
+    def read_csv_file(self, file_path):
+        with open(f'{file_path}.csv', mode='r') as file:
+            csvFile = csv.reader(file)
+            for lines in csvFile:
+                print(lines)
+
+    def write_into_csv_file(self, rows, filepath):
+        with open(f"{filepath}.csv", 'w') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerows(rows)
+            print("Write successful")
